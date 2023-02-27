@@ -34,7 +34,7 @@ route::delete('/buyer-destroy/{id}',[BuyerController::class,'destroy']);
 
 route::get('/vendor',[VendorController::class,'index']);
 route::get('/vendor_detail/{id}',[VendorController::class,'detail']);
-route::get('/vendor_export',[VendorController::class,'export']);
+route::get('/vendor_export/{id}',[VendorController::class,'export']);
 route::post('/import',[VendorController::class,'import']);
 route::get('/vendor_create',[VendorController::class,'create']);
 route::post('/vendor',[VendorController::class,'store']);

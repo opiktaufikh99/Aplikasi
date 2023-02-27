@@ -13,5 +13,6 @@
                 <li> buyer:{{ $vendor->buyer->name}}</li>
             </ul>
         </div>
+        <a href="/vendor_export/{{ $vendor->id }}" class=" btn btn-primary col-12"> Export </a>
     </div>
 @endsection

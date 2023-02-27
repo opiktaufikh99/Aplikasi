@@ -13,8 +13,11 @@ use Maatwebsite\Excel\Facades\Excel;
 
 class VendorController extends Controller
 {
-    public function index(){
-        $vendor = VendorModel::with('buyer')->get();
+    public function index(Request $request){
+        $keyword = $request->keyword;
+        $vendor = VendorModel::where('name','LIKE', '%'.$keyword.'%')
+        ->orwhere('alamat','LIKE', '%'.$keyword.'%')
+        ->paginate(7);
         return view('gudang.vendor1.vendor_index',
         ['vendor'=>$vendor]);
     }
